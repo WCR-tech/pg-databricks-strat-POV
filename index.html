@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&G Strategic Account Analysis - Databricks Opportunity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px;
+            background: white;
+            margin: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .slide::after {
+            content: "© 2025 - Confidential Strategic Analysis";
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .slide.active {
+            display: block;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .slide h1 {
+            font-size: 2.5rem;
+            color: #1a202c;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #e53e3e;
+            padding-bottom: 10px;
+        }
+
+        .slide h2 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin: 25px 0 15px 0;
+        }
+
+        .slide h3 {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin: 20px 0 10px 0;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .slide ul {
+            margin-left: 20px;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #e53e3e;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a202c;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #4a5568;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 6px;
+            flex-grow: 1;
+            border-left: 3px solid #a0aec0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: #4a5568;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            color: white;
+            font-size: 0.9rem;
+            margin: 0 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #e53e3e;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>P&G Account Transformation Strategy</h1>
+            <div style="text-align: center; margin: 60px 0;">
+                <h2>Strategic Account Executive Role</h2>
+                <h3 style="color: #4a5568; font-size: 1.5rem;">Databricks Global Leadership Presentation</h3>
+                <p style="margin-top: 40px; font-size: 1.2rem; color: #718096;">
+                    Leveraging 4 years of P&G relationships to transform a $20MM stagnating account
+                </p>
+            </div>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$20MM</div>
+                    <div class="metric-label">Annual Account Value</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4 Years</div>
+                    <div class="metric-label">Relationship Capital</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0%</div>
+                    <div class="metric-label">Current Growth Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Challenge -->
+        <div class="slide">
+            <h1>The Challenge</h1>
+            <h2>Databricks is Trapped in Commodity Role</h2>
+            
+            <div class="highlight">
+                <h3>Revenue Decline Indicators</h3>
+                <ul>
+                    <li>$1.5MM revenue loss from customer optimizations</li>
+                    <li>Flat growth despite significant P&G AI investments</li>
+                    <li>Unable to expand beyond core IT footprint</li>
+                </ul>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value" style="color: #e74c3c;">-$1.5MM</div>
+                    <div class="metric-label">Lost Revenue (Optimizations)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: #e74c3c;">0%</div>
+                    <div class="metric-label">Growth Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">1</div>
+                    <div class="metric-label">Primary Business Unit</div>
+                </div>
+            </div>
+
+            <h3>Root Cause: Positional Disadvantage</h3>
+            <ul>
+                <li><strong>Perception:</strong> Replaceable platform component within AI Factory</li>
+                <li><strong>Competition:</strong> Microsoft owns manufacturing, GCP owns marketing</li>
+                <li><strong>Relationships:</strong> Non-local team with limited P&G integration</li>
+                <li><strong>Strategy:</strong> No partner ecosystem or business unit advocacy</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: The Opportunity -->
+        <div class="slide">
+            <h1>The Opportunity</h1>
+            <h2>Business Units Seeking AI Factory Alternatives</h2>
+            
+            <div class="highlight">
+                <h3>Market Intelligence: Internal Demand Signals</h3>
+                <p><strong>Key Insight:</strong> Teams are actively seeking alternatives to AI Factory due to complexity and cost concerns, creating untapped demand for pragmatic AI solutions.</p>
+            </div>
+
+            <h3>Organizational Dynamics Working in Our Favor</h3>
+            <ul>
+                <li><strong>AI Factory Friction:</strong> Teams frustrated with complexity and expense</li>
+                <li><strong>Budget Pressures:</strong> P&G layoffs driving focus on essential technology</li>
+                <li><strong>Decentralized Demand:</strong> Business units seeking autonomous solutions</li>
+                <li><strong>Procurement Gaps:</strong> Competitors focused on wrong entry points</li>
+            </ul>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">Multiple</div>
+                    <div class="metric-label">Frustrated Business Units</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5 Pillars</div>
+                    <div class="metric-label">P&G Strategic Focus Areas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">2 Vendors</div>
+                    <div class="metric-label">Current Competitive Threats</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why I'm The Solution -->
+        <div class="slide">
+            <h1>Why I'm The Solution</h1>
+            <h2>Unique Combination of Relationship Capital & Technical Credibility</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Deep Account Intelligence</h3>
+                        <p>4 years building relationships across P&G, understanding internal politics and decision-making patterns</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Proven Business Unit Penetration</h3>
+                        <p>Successfully bypassed procurement restrictions to serve teams outside core IT</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Technical Credibility</h3>
+                        <p>Data/analytics background with GenAI experience and complementary technology knowledge</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Local Presence & Cultural Integration</h3>
+                        <p>Established personal brand within P&G as trusted, respected partner</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>What Previous Rep Couldn't Achieve</h3>
+                <p>Despite being a "top, seasoned rep," they lacked the relationship foundation and cultural integration necessary to expand beyond the AI Factory constraint.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: 90-Day Action Plan -->
+        <div class="slide">
+            <h1>90-Day Action Plan</h1>
+            <h2>Systematic Relationship Leverage & Value Demonstration</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #dc2626;"></div>
+                    <div class="timeline-content">
+                        <h3>Days 1-30: Account Assessment</h3>
+                        <ul>
+                            <li>Comprehensive stakeholder mapping</li>
+                            <li>Current Databricks perception audit</li>
+                            <li>Relationship leverage opportunity identification</li>
+                            <li>Competitive positioning gap analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #ea580c;"></div>
+                    <div class="timeline-content">
+                        <h3>Days 31-60: Strategic Relationship Building</h3>
+                        <ul>
+                            <li>Leverage existing relationships for Databricks introductions</li>
+                            <li>Engage frustrated AI Factory users</li>
+                            <li>Initiate partner identification process</li>
+                            <li>Establish regular stakeholder engagement cadence</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #16a34a;"></div>
+                    <div class="timeline-content">
+                        <h3>Days 61-90: Value Demonstration</h3>
+                        <ul>
+                            <li>Identify pilot opportunity outside AI Factory</li>
+                            <li>Launch partner relationship development</li>
+                            <li>Implement systematic value communication</li>
+                            <li>Position Databricks for specific business challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="changeSlide(-1)" id="prevBtn">Previous</button>
+        <span class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+        </span>
+        <button class="nav-btn" onclick="changeSlide(1)" id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlideIndex].classList.remove('active');
+            
+            if (n >= totalSlides) currentSlideIndex = 0;
+            if (n < 0) currentSlideIndex = totalSlides - 1;
+            else currentSlideIndex = n;
+            
+            slides[currentSlideIndex].classList.add('active');
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex + n);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
