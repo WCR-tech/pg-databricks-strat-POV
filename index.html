@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P&G Strategic Account Analysis - Databricks Opportunity</title>
+    <title>P&G Strategic Account Executive - Databricks Leadership Presentation</title>
     <style>
         * {
             margin: 0;
@@ -26,12 +26,12 @@
 
         .slide {
             display: none;
-            padding: 60px;
+            padding: 50px;
             background: white;
-            margin: 40px;
+            margin: 30px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            height: calc(100vh - 80px);
+            height: calc(100vh - 60px);
             overflow-y: auto;
             position: relative;
         }
@@ -39,9 +39,9 @@
         .slide::after {
             content: "© 2025 - Confidential Strategic Analysis";
             position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 0.8rem;
+            bottom: 10px;
+            right: 25px;
+            font-size: 0.7rem;
             color: #94a3b8;
             font-style: italic;
         }
@@ -57,88 +57,62 @@
         }
 
         .slide h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: #1a202c;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border-bottom: 3px solid #e53e3e;
-            padding-bottom: 10px;
+            padding-bottom: 6px;
         }
 
         .slide h2 {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             color: #2d3748;
-            margin: 25px 0 15px 0;
+            margin: 16px 0 10px 0;
         }
 
         .slide h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #4a5568;
-            margin: 20px 0 10px 0;
+            margin: 12px 0 6px 0;
         }
 
         .slide p, .slide li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 6px;
         }
 
         .slide ul {
-            margin-left: 20px;
-        }
-
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .metric-card {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 4px solid #e53e3e;
-            border: 1px solid #e2e8f0;
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1a202c;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            color: #718096;
-            margin-top: 5px;
+            margin-left: 18px;
+            margin-bottom: 15px;
         }
 
         .timeline {
             position: relative;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .timeline-item {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+            align-items: flex-start;
+            margin-bottom: 12px;
             position: relative;
         }
 
         .timeline-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background: #4a5568;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-right: 15px;
+            margin-top: 6px;
             flex-shrink: 0;
         }
 
         .timeline-content {
             background: #f7fafc;
-            padding: 15px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 5px;
             flex-grow: 1;
             border-left: 3px solid #a0aec0;
             border: 1px solid #e2e8f0;
@@ -146,14 +120,14 @@
 
         .navigation {
             position: fixed;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0,0,0,0.8);
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
 
@@ -161,16 +135,16 @@
             background: #4a5568;
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
         }
 
         .nav-btn:hover {
             background: #e53e3e;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .nav-btn:disabled {
@@ -181,190 +155,204 @@
 
         .slide-counter {
             color: white;
-            font-size: 0.9rem;
-            margin: 0 10px;
+            font-size: 0.8rem;
+            margin: 0 8px;
         }
 
         .highlight {
             background: linear-gradient(120deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 12px 0;
             border-left: 4px solid #e53e3e;
             border: 1px solid #e2e8f0;
+        }
+
+        .key-points {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 12px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .strong-text {
+            font-weight: 600;
+            color: #2d3748;
         }
     </style>
 </head>
 <body>
     <div class="slideshow-container">
         
-        <!-- Slide 1: Title -->
+        <!-- Slide 1: Title/Introduction Page -->
         <div class="slide active">
-            <h1>P&G Account Transformation Strategy</h1>
-            <div style="text-align: center; margin: 60px 0;">
-                <h2>Strategic Account Executive Role</h2>
-                <h3 style="color: #4a5568; font-size: 1.5rem;">Databricks Global Leadership Presentation</h3>
-                <p style="margin-top: 40px; font-size: 1.2rem; color: #718096;">
-                    Leveraging 4 years of P&G relationships to transform a $20MM stagnating account
-                </p>
-            </div>
-            <div class="metric-grid">
-                <div class="metric-card">
-                    <div class="metric-value">$20MM</div>
-                    <div class="metric-label">Annual Account Value</div>
+            <div style="text-align: center; padding-top: 80px;">
+                <h1 style="font-size: 2.4rem; margin-bottom: 30px; border: none;">Databricks at P&G</h1>
+                <h2 style="font-size: 1.6rem; color: #4a5568; margin-bottom: 40px;">Personal Background Fit and Opportunity Analysis Draft</h2>
+                
+                <div style="margin: 60px 0; padding: 30px; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border-radius: 12px; border-left: 6px solid #e53e3e;">
+                    <p style="font-size: 1.2rem; color: #2d3748; font-weight: 500; margin-bottom: 15px;">Strategic Account Executive Role Assessment</p>
+                    <p style="font-size: 1rem; color: #4a5568;">Transforming vendor relationships into strategic partnerships through deep market knowledge, established relationships, and proven value delivery methodology</p>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-value">4 Years</div>
-                    <div class="metric-label">Relationship Capital</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">0%</div>
-                    <div class="metric-label">Current Growth Rate</div>
+
+                <div style="margin-top: 100px; font-size: 0.9rem; color: #718096;">
+                    <p>Confidential Analysis for Databricks Leadership</p>
+                    <p style="margin-top: 5px;">Prepared by Chase Ratterman</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 2: The Challenge -->
+        <!-- Slide 2: Strategic Account Executive Role Alignment -->
         <div class="slide">
-            <h1>The Challenge</h1>
-            <h2>Databricks is Trapped in Commodity Role</h2>
+            <h1>Strategic Account Executive Role Alignment</h1>
+            <h2>Overview of Strategic Sales Experience - Chase Ratterman</h2>
+            <p style="font-size: 1.1rem; color: #4a5568; margin: 16px 0;">Leveraging 15+ Years of P&G Technology Sales Experience</p>
             
             <div class="highlight">
-                <h3>Revenue Decline Indicators</h3>
+                <h3>Proven P&G Account Leadership at Elastic:</h3>
                 <ul>
-                    <li>$1.5MM revenue loss from customer optimizations</li>
-                    <li>Flat growth despite significant P&G AI investments</li>
-                    <li>Unable to expand beyond core IT footprint</li>
+                    <li>Hired in 2021 to salvage P&G account facing attrition due to internal political/technology standardization pressure, failed services engagement, no executive alignment and being locked in to one low value on-prem use case where prior contacts had all left or been re-orgd</li>
+                    <li>Full cycle procurement experience introducing and securing P&G MSA, Cloud agreements</li>
+                    <li>Introduced and managed onboarding of strategic partners</li>
+                    <li>Secured internal sponsorship of investing in development of P&G account team by educating Elastic on how P&G buys, vendor expectations, etc</li>
+                    <li><span class="strong-text">Secured one of few seven figure multi-year SaaS contracts recently approved by procurement in 2025</span></li>
+                    <li>Despite prior CTO demands to standardize on their internal platform, we co-sponsored a plan to quantify value and prove our POV to executive leadership</li>
+                    <li>Continue to expand into new teams across GTO and GBS leveraging similar value based strategies</li>
+                    <li>My original mission at Elastic was to repair similar challenges at Kroger, Macy's and Cardinal Health - all resulting in outcomes that elevated Elastic's brand and led to Club achievement</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="metric-grid">
-                <div class="metric-card">
-                    <div class="metric-value" style="color: #e74c3c;">-$1.5MM</div>
-                    <div class="metric-label">Lost Revenue (Optimizations)</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="color: #e74c3c;">0%</div>
-                    <div class="metric-label">Growth Rate</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">1</div>
-                    <div class="metric-label">Primary Business Unit</div>
-                </div>
+        <!-- Slide 3: Account Transformation Strategy -->
+        <div class="slide">
+            <h1>Account Transformation Strategy</h1>
+            <h2>Account Transformation Approach</h2>
+
+            <div class="key-points">
+                <h3>Positioning Shift: From Platform Vendor to Business Enabler</h3>
+                <p>Transform Databricks perception from "another data platform" to "the indispensable Data and AI solution for teams seeking agility and results"</p>
+            </div>
+
+            <h3>Relationship-Driven Growth Strategy</h3>
+            <p>Build grassroots advocacy through value demonstration, transitioning from top-down platform mandates to bottom-up demand generation</p>
+
+            <h3>Multi-Threading Approach</h3>
+            <p>Develop parallel relationship streams across business units while strengthening AI Factory partnership, creating multiple growth vectors and reducing single-point-of-failure risk</p>
+
+            <h3>Partner Ecosystem Development</h3>
+            <p>Establish strategic alliances with both large and boutique partners that P&G trusts, enabling Databricks to sell through established trusted advisor relationships</p>
+
+            <h3>Value Communication Framework</h3>
+            <p>Implement systematic measurement and communication of business impact, moving beyond technical metrics to demonstrable business outcomes</p>
+        </div>
+
+        <!-- Slide 4: The Challenge -->
+        <div class="slide">
+            <h1>Databricks Expansion Beyond GTO Platform</h1>
+            <h2>Must Evolve Beyond GTO Platform Status</h2>
+            
+            <div class="key-points">
+                <h3>Revenue Decline Indicators:</h3>
+                <ul>
+                    <li>Revenue loss from customer optimization and lack of multi-partner strategy</li>
+                    <li>Flat growth despite significant P&G AI and data initiatives across business units</li>
+                    <li>Unable to expand beyond GTO IT footprint under April Cielica's GBS organization</li>
+                </ul>
             </div>
 
             <h3>Root Cause: Positional Disadvantage</h3>
             <ul>
-                <li><strong>Perception:</strong> Replaceable platform component within AI Factory</li>
-                <li><strong>Competition:</strong> Microsoft owns manufacturing, GCP owns marketing</li>
-                <li><strong>Relationships:</strong> Non-local team with limited P&G integration</li>
-                <li><strong>Strategy:</strong> No partner ecosystem or business unit advocacy</li>
+                <li><span class="strong-text">Perception:</span> Replaceable platform component within AI Factory</li>
+                <li><span class="strong-text">Competition:</span> Microsoft dominates manufacturing, GCP controls marketing</li>
+                <li><span class="strong-text">Relationships:</span> Non-local team with limited P&G cultural integration</li>
+                <li><span class="strong-text">Strategy:</span> Absence of partner ecosystem or business unit advocacy</li>
             </ul>
+
+            <div class="highlight">
+                <p><span class="strong-text">Key Challenge:</span> Databricks is trapped in a commoditized role within P&G's AI Factory, limiting growth potential across P&G's diverse business portfolio.</p>
+            </div>
         </div>
 
-        <!-- Slide 3: The Opportunity -->
+        <!-- Slide 5: Strategic AE Responsibilities -->
         <div class="slide">
-            <h1>The Opportunity</h1>
-            <h2>Business Units Seeking AI Factory Alternatives</h2>
+            <h1>Strategic AE Key Responsibilities</h1>
+            <h2>Evolving P&G's Databricks Relationship</h2>
             
-            <div class="highlight">
-                <h3>Market Intelligence: Internal Demand Signals</h3>
-                <p><strong>Key Insight:</strong> Teams are actively seeking alternatives to AI Factory due to complexity and cost concerns, creating untapped demand for pragmatic AI solutions.</p>
+            <p style="margin-bottom: 12px;"><span class="strong-text">Key Contributions Identified (8/8/25 Leadership Discussion):</span></p>
+
+            <div class="key-points">
+                <h3>Local Market Advantage:</h3>
+                <ul>
+                    <li>Leverage the power of being local to Cincinnati and onsite weekly/daily</li>
+                    <li>Redefine relationship with P&G focused on quantifying value delivered</li>
+                </ul>
             </div>
 
-            <h3>Organizational Dynamics Working in Our Favor</h3>
-            <ul>
-                <li><strong>AI Factory Friction:</strong> Teams frustrated with complexity and expense</li>
-                <li><strong>Budget Pressures:</strong> P&G layoffs driving focus on essential technology</li>
-                <li><strong>Decentralized Demand:</strong> Business units seeking autonomous solutions</li>
-                <li><strong>Procurement Gaps:</strong> Competitors focused on wrong entry points</li>
-            </ul>
-
-            <div class="metric-grid">
-                <div class="metric-card">
-                    <div class="metric-value">Multiple</div>
-                    <div class="metric-label">Frustrated Business Units</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">5 Pillars</div>
-                    <div class="metric-label">P&G Strategic Focus Areas</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">2 Vendors</div>
-                    <div class="metric-label">Current Competitive Threats</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Why I'm The Solution -->
-        <div class="slide">
-            <h1>Why I'm The Solution</h1>
-            <h2>Unique Combination of Relationship Capital & Technical Credibility</h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Deep Account Intelligence</h3>
-                        <p>4 years building relationships across P&G, understanding internal politics and decision-making patterns</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Proven Business Unit Penetration</h3>
-                        <p>Successfully bypassed procurement restrictions to serve teams outside core IT</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Technical Credibility</h3>
-                        <p>Data/analytics background with GenAI experience and complementary technology knowledge</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Local Presence & Cultural Integration</h3>
-                        <p>Established personal brand within P&G as trusted, respected partner</p>
-                    </div>
-                </div>
+            <div class="key-points">
+                <h3>AI Factory Partnership Evolution:</h3>
+                <ul>
+                    <li>Prove out value to the AI Factory team of Databricks being an evangelist of their P&G mission that can be introduced to teams... not just sellers selling to use more Databricks</li>
+                    <li>Establish alignment on co-sponsored plan to present future state POV to April Cielica and Seth Cohen's leadership team, business side leadership owning data/AI initiatives</li>
+                </ul>
             </div>
 
-            <div class="highlight">
-                <h3>What Previous Rep Couldn't Achieve</h3>
-                <p>Despite being a "top, seasoned rep," they lacked the relationship foundation and cultural integration necessary to expand beyond the AI Factory constraint.</p>
+            <div class="key-points">
+                <h3>Multi-Threaded Strategy Development:</h3>
+                <ul>
+                    <li>Establish and run multi-threaded partner strategy aligned to key GTO/GBS partner vendors</li>
+                    <li>Establish key relationships in internal centers of influence guiding P&G technical strategy. Example: CIO Technology roundtable members, NextGen Services team, etc</li>
+                    <li>Establish more regular roadmap or product type forums involving technical and business side teams discussing top of mind P&G initiatives</li>
+                </ul>
+            </div>
+
+            <div class="key-points">
+                <h3>Competitive Expansion & Business Development:</h3>
+                <ul>
+                    <li>Deliver a biz dev strategy targeting the Azure and GCP footprint across manufacturing/marketing</li>
+                    <li>Map out P&G initiatives to align to and threats to growth</li>
+                    <li>Continue to drive internal Databricks account team strategy, executive alignment</li>
+                </ul>
+            </div>
+
+            <div class="key-points">
+                <h3>Market Presence & Strategic Positioning:</h3>
+                <ul>
+                    <li>Align with marketing, SA, CSM functions to ensure Databricks is showing up where P&G is showing up... Cincinnati IT Symposium, CDO Magazine events, ComSpark events, etc</li>
+                    <li>Be more than another vendor logo buying tickets, lunch</li>
+                </ul>
             </div>
         </div>
 
-        <!-- Slide 5: 90-Day Action Plan -->
+        <!-- Slide 6: 90-Day Action Plan -->
         <div class="slide">
-            <h1>90-Day Action Plan</h1>
-            <h2>Systematic Relationship Leverage & Value Demonstration</h2>
+            <h1>90-Day Transformation Plan</h1>
+            <h2>Relationship Leverage & Value Demonstration</h2>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot" style="background: #dc2626;"></div>
                     <div class="timeline-content">
-                        <h3>Days 1-30: Account Assessment</h3>
+                        <h3>Days 1-30: Strategic Assessment</h3>
                         <ul>
-                            <li>Comprehensive stakeholder mapping</li>
-                            <li>Current Databricks perception audit</li>
+                            <li>Comprehensive stakeholder mapping across GTO and GBS</li>
+                            <li>Current Databricks perception audit with key decision makers</li>
                             <li>Relationship leverage opportunity identification</li>
                             <li>Competitive positioning gap analysis</li>
+                            <li>Partner ecosystem evaluation</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot" style="background: #ea580c;"></div>
                     <div class="timeline-content">
-                        <h3>Days 31-60: Strategic Relationship Building</h3>
+                        <h3>Days 31-60: Relationship Activation</h3>
                         <ul>
-                            <li>Leverage existing relationships for Databricks introductions</li>
-                            <li>Engage frustrated AI Factory users</li>
-                            <li>Initiate partner identification process</li>
-                            <li>Establish regular stakeholder engagement cadence</li>
+                            <li>Leverage existing relationships for Databricks strategic introductions</li>
+                            <li>Engage frustrated AI Factory users with alternative solutions</li>
+                            <li>Initiate multi-threaded partner identification and outreach</li>
+                            <li>Establish regular engagement cadence with key stakeholders</li>
+                            <li>Begin executive alignment conversations</li>
                         </ul>
                     </div>
                 </div>
@@ -373,13 +361,132 @@
                     <div class="timeline-content">
                         <h3>Days 61-90: Value Demonstration</h3>
                         <ul>
-                            <li>Identify pilot opportunity outside AI Factory</li>
-                            <li>Launch partner relationship development</li>
-                            <li>Implement systematic value communication</li>
-                            <li>Position Databricks for specific business challenges</li>
+                            <li>Identify and develop pilot opportunities outside AI Factory constraints</li>
+                            <li>Launch comprehensive partner relationship development initiatives</li>
+                            <li>Implement systematic value communication and measurement processes</li>
+                            <li>Position Databricks for specific high-impact business challenges</li>
+                            <li>Establish foundation for long-term strategic partnership evolution</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: 12-18 Month Growth Strategy -->
+        <div class="slide">
+            <h1>12-18 Month Growth Strategy</h1>
+            <h2>Expansion Strategy Timeline</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #3b82f6;"></div>
+                    <div class="timeline-content">
+                        <h3>Quarter 1-2: Foundation Building</h3>
+                        <ul>
+                            <li>Establish Databricks as trusted advisor versus transactional vendor</li>
+                            <li>Develop champion network across multiple business units</li>
+                            <li>Create comprehensive partner ecosystem supporting P&G initiatives</li>
+                            <li>Generate compelling proof points demonstrating superior agility and value</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #8b5cf6;"></div>
+                    <div class="timeline-content">
+                        <h3>Quarter 3-4: Market Expansion</h3>
+                        <ul>
+                            <li>Launch targeted competitive campaigns in manufacturing and marketing</li>
+                            <li>Leverage partner relationships for strategic competitive displacement</li>
+                            <li>Expand consumption through new use cases and cross-functional teams</li>
+                            <li>Build executive-level advocacy and strategic organizational alignment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #10b981;"></div>
+                    <div class="timeline-content">
+                        <h3>Quarter 5-6: Strategic Partnership Evolution</h3>
+                        <ul>
+                            <li>Position Databricks as integral to P&G's AI strategy evolution</li>
+                            <li>Establish multi-year contracts and long-term partnership agreements</li>
+                            <li>Create joint innovation initiatives and thought leadership opportunities</li>
+                            <li>Achieve strategic vendor status with expanded scope of work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><span class="strong-text">Target Outcome:</span> Transform Databricks from platform component to strategic partner integral to P&G's data and AI competitive advantage.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Success Metrics -->
+        <div class="slide">
+            <h1>Performance Metrics & KPIs</h1>
+            <h2>Measuring Transformation Progress</h2>
+
+            <h3>Revenue Growth Indicators:</h3>
+            <ul>
+                <li>Annual consumption growth (target: 25%+ year-over-year)</li>
+                <li>New business unit penetration (target: 2+ new departments)</li>
+                <li>Competitive win rate in contested deals</li>
+                <li>Partner-driven revenue attribution and growth</li>
+            </ul>
+
+            <h3>Relationship & Engagement Metrics:</h3>
+            <ul>
+                <li>Executive stakeholder meetings per quarter</li>
+                <li>Champion advocacy score and referral generation</li>
+                <li>Partner relationship development milestones</li>
+                <li>Internal P&G presentation and speaking opportunities</li>
+            </ul>
+
+            <h3>Strategic Positioning Measures:</h3>
+            <ul>
+                <li>Share of voice in P&G AI/data strategic discussions</li>
+                <li>Inclusion in strategic technology roadmap planning processes</li>
+                <li>Joint initiative development and successful execution</li>
+                <li>Thought leadership platform participation and recognition</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Executive Summary -->
+        <div class="slide">
+            <h1>Executive Summary: Opportunity Analysis</h1>
+            <h2>Strategic Assessment</h2>
+
+            <div class="key-points">
+                <h3>The Opportunity</h3>
+                <p>Transform the P&G account from platform vendor to strategic partner by leveraging deep account relationships, organizational knowledge, and proven ability to navigate complex enterprise dynamics across multiple business units.</p>
+            </div>
+
+            <div class="key-points">
+                <h3>The Challenge</h3>
+                <p>Databricks has experienced revenue loss due to optimizations and remains trapped in a commoditized role within P&G's AI Factory, unable to expand beyond core IT despite significant business unit demand for alternative AI solutions.</p>
+            </div>
+
+            <div class="key-points">
+                <h3>The Solution</h3>
+                <p>Deploy a relationship-driven, boots-on-the-ground approach that positions Databricks as the pragmatic alternative for business units seeking agility outside centralized platforms, while strengthening the core AI Factory partnership.</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Ideal Candidate Profile</h3>
+                <p>15+ years of P&G experience, local market presence, established relationships across GTO and GBS, and proven track record of transforming vendor relationships into strategic partnerships.</p>
+            </div>
+
+            <h3>Next Steps:</h3>
+            <ol>
+                <li>Align with Databricks leadership and technical teams on mutual hiring fit and GTM strategy</li>
+                <li>Execute comprehensive 90-day transformation plan</li>
+                <li>Build robust partner ecosystem and champion network</li>
+                <li>Drive measurable revenue growth and market expansion</li>
+                <li>Establish Databricks as integral P&G strategic partner across business and technology organizations</li>
+            </ol>
+
+            <div class="highlight">
+                <p><span class="strong-text">Success Foundation:</span> Established relationships, proven methodology, and deep market knowledge provide the foundation for transforming P&G into a strategic growth account for Databricks.</p>
             </div>
         </div>
 
@@ -388,7 +495,7 @@
     <div class="navigation">
         <button class="nav-btn" onclick="changeSlide(-1)" id="prevBtn">Previous</button>
         <span class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+            <span id="currentSlide">1</span> / <span id="totalSlides">9</span>
         </span>
         <button class="nav-btn" onclick="changeSlide(1)" id="nextBtn">Next</button>
     </div>
